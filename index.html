@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahaveer Portfolio</title>
+
+<style>
+:root {
+  --bg:#0f172a;
+  --text:#fff;
+  --card:#020617;
+  --primary:#38bdf8;
+}
+
+body.light {
+  --bg:#fff;
+  --text:#111;
+  --card:#f1f5f9;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif;}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  scroll-behavior:smooth;
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 8%;
+  background:var(--card);
+  position:sticky;
+  top:0;
+}
+
+.logo{color:var(--primary);font-weight:bold;}
+
+nav a{
+  margin-left:15px;
+  text-decoration:none;
+  color:var(--text);
+}
+
+.menu-btn{display:none;font-size:22px;cursor:pointer;}
+
+.toggle{cursor:pointer;background:var(--primary);border:none;padding:5px 10px;border-radius:5px;}
+
+/* HERO */
+.hero{
+  min-height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  padding:60px 8%;
+}
+
+.hero h1{font-size:2.5rem;}
+.hero span{color:var(--primary);}
+
+.btn{
+  display:inline-block;
+  margin-top:20px;
+  padding:10px 20px;
+  background:var(--primary);
+  color:black;
+  border-radius:5px;
+  text-decoration:none;
+}
+
+/* SECTIONS */
+section{padding:60px 8%;}
+
+.skills,.projects{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:10px;
+  transition:.3s;
+}
+
+.card:hover{transform:translateY(-5px);}
+
+/* CONTACT */
+.contact a{
+  display:block;
+  margin:10px 0;
+  color:var(--primary);
+  text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  background:var(--card);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{
+    position:absolute;
+    top:60px;
+    right:0;
+    background:var(--card);
+    flex-direction:column;
+    width:200px;
+    display:none;
+  }
+  nav.active{display:flex;}
+  nav a{padding:10px;}
+  .menu-btn{display:block;}
+  .hero{text-align:center;}
+}
+
+/* About Section Upgrade */
+#about {
+  background: linear-gradient(135deg, rgba(56,189,248,0.08), transparent);
+  border-radius: 12px;
+  margin: 40px 8%;
+  padding: 50px 8%;
+  position: relative;
+  overflow: hidden;
+}
+
+#about h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+#about h2::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background: var(--primary);
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  border-radius: 5px;
+}
+
+#about p {
+  margin-top: 20px;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #cbd5f5;
+  max-width: 800px;
+}
+
+/* Light mode fix */
+body.light #about p {
+  color: #333;
+}
+
+/* Hover effect */
+#about:hover {
+  transform: translateY(-3px);
+  transition: 0.3s;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2 class="logo">Mahaveer</h2>
+
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+  <nav id="nav">
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <button class="toggle" onclick="toggleTheme()">🌙</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div>
+    <h1>Hi, I'm <span>Mahaveer</span></h1>
+    <p>Frontend Developer | Web Developer</p>
+
+    <a href="#projects" class="btn">View Projects</a>
+    <a href="#" class="btn">Download Resume</a>
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I am a BCA student with strong fundamentals in programming and web technologies. Passionate about full-stack web development, I enjoy solving complex problems and building applications that make a difference. I am constantly learning new technologies and applying them in real-world projects to sharpen my development skills.
+  </p>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="card">HTML</div>
+    <div class="card">CSS</div>
+    <div class="card">JavaScript</div>
+    <div class="card">React</div>
+    <div class="card">Git</div>
+    <div class="card">API Integration</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+
+    <div class="card">
+      <h3>Weather App</h3>
+      <p>Real-time weather app using API.</p>
+      <a href="https://github.com/mahaveert585-cloud" target="_blank">GitHub</a>
+    </div>
+
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>Responsive personal portfolio.</p>
+      <a href="https://github.com/mahaveert585-cloud" target="_blank">GitHub</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <a href="mailto:mahaveert585@gmail.com">📧 mahaveert585@gmail.com</a>
+  <a href="https://github.com/mahaveert585-cloud" target="_blank">💻 GitHub</a>
+  <a href="https://linkedin.com/in/mahaveerthalor" target="_blank">🔗 LinkedIn</a>
+</section>
+
+<footer>
+  <p>© 2026 Mahaveer</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("nav").classList.toggle("active");
+}
+
+function toggleTheme(){
+  document.body.classList.toggle("light");
+}
+</script>
+
+</body>
+</html>
